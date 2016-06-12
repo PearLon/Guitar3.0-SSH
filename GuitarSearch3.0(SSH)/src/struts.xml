@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 配置了系列常量 -->
+	<constant name="struts.i18n.encoding" value="GBK"/>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="ture"/>	
+	<package name="chang" extends="struts-default">
+		
+		<action name="addGuitar" class="action.GuitarAction"
+			method="add">
+			<!-- 添加吉他成功，列出所有吉他 -->
+			<result type="chain">listGuitars</result>
+			<!-- 添加吉他失败，跳转到添加吉他的表单页 -->
+			<result name="error">/WEB-INF/content/guitarForm.jsp</result>
+		</action>
+		
+		<action name="listGuitars" class="action.GuitarAction"
+			method="list">
+			<result>/WEB-INF/content/listGuitars.jsp</result>
+		</action>
+		
+		<action name="deleteGuitar" class="action.GuitarAction"
+			method="delete">
+			<result type="chain">listGuitars</result>
+		</action>		
+		
+		
+		<action name="searchGuitar" class="action.GuitarAction"
+			method="search">
+			<result>/WEB-INF/content/listGuitars.jsp</result>
+		</action>	
+		
+
+		<!-- 让用户直接访问该应用时列出所有视图页面-->
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+		
+	 
+	</package>
+</struts>
