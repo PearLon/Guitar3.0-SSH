@@ -12,7 +12,7 @@ public class GuitarDaoHibernate4 extends BaseDaoHibernate4<Guitar>
 
 	@SuppressWarnings("unchecked")
 	@Override
-	//×Ô¼ºÊéĞ´µÄsearch·½·¨µÄÊµÏÖ
+	//searchæ–¹æ³•çš„å®ç°
 	public List<Guitar> searchGuitar(String model) {
 		String hql="from Guitar as p where p.model="+"'"+ model+ "'";
 		return (List<Guitar>)getSessionFactory().getCurrentSession()
