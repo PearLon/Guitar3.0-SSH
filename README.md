@@ -16,3 +16,7 @@
 ##SearchResult
 
 ![result](https://github.com/PearLon/Guitar3.0-SSH/blob/master/searchresult.png?raw=true)
+
+##add
+
+![add](https://github.com/PearLon/Guitar3.0-SSH/blob/master/add.png?raw=true)
