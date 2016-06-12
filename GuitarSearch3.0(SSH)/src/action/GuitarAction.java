@@ -11,7 +11,7 @@ public class GuitarAction extends ActionSupport
 {
 	private GuitarService guitarService;
 	
-	// ÒÀÀµ×¢ÈëGuitarService×é¼şµÄsetter·½·¨¡£
+	// ä¾èµ–æ³¨å…¥GuitarServiceç»„ä»¶çš„setteræ–¹æ³•ã€‚
 	public void setGuitarService(GuitarService guitarService)
 	{
 		this.guitarService = guitarService;
@@ -45,19 +45,19 @@ public class GuitarAction extends ActionSupport
 	{
 		this.id = id;
 	}
-	// ´¦ÀíÌí¼Óadd()·½·¨
+	// å¤„ç†æ·»åŠ add()æ–¹æ³•
 	public String add()
 	{
 		
 		System.out.print("here");
-		// µ÷ÓÃÒµÎñÂß¼­×é¼şµÄaddGuitar()·½·¨À´´¦ÀíÓÃ»§ÇëÇó		
+		// è°ƒç”¨ä¸šåŠ¡é€»è¾‘ç»„ä»¶çš„addGuitar()æ–¹æ³•æ¥å¤„ç†ç”¨æˆ·è¯·æ±‚		
 		int result = guitarService.addGuitar(guitar);
 		if(result > 0)
 		{
-			addActionMessage("¹§Ï²Äú£¬Í¼ÊéÌí¼Ó³É¹¦£¡");
+			addActionMessage("æ­å–œæ‚¨ï¼Œæ·»åŠ æˆåŠŸï¼");
 			return SUCCESS;
 		}
-		addActionError("Í¼ÊéÌí¼ÓÊ§°Ü£¬ÇëÖØĞÂÊäÈë£¡");
+		addActionError("æ·»åŠ å¤±è´¥ï¼Œè¯·é‡æ–°è¾“å…¥ï¼");
 		return ERROR;
 	}
 	public String list()
